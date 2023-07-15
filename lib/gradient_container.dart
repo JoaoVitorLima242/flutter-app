@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:first_app/white_text.dart';
-
 const startGradientAliginment = Alignment.topRight;
 const endGradientAliginment = Alignment.bottomLeft;
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key, required this.colors});
+
+  const GradientContainer.orange({super.key})
+      : colors = const [
+          Color.fromARGB(255, 244, 148, 116),
+          Color(0xfff8b500),
+        ];
 
   final List<Color> colors;
 
@@ -20,8 +24,11 @@ class GradientContainer extends StatelessWidget {
           colors: colors,
         ),
       ),
-      child: const Center(
-        child: WhiteText('Passing my text'),
+      child: Center(
+        child: Image.asset(
+          'images/dice-2.png',
+          width: 200,
+        ),
       ),
     );
   }
